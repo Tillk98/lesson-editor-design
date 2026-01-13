@@ -367,12 +367,17 @@ function performSearch(type, query, options, selectedTags, dropdown, selectedPro
   } else {
     // User has typed something - show "Add '[query]' as new [section name]" option
     // Show it at top if there are results, or as the only option if no results
+    // Skip this for categories (categories cannot be created)
     if (results.length === 0) {
-      // No results - show only "Add '[query]' as new [section name]"
-      dropdownContent.appendChild(createAddQueryOption(query));
+      // No results - show only "Add '[query]' as new [section name]" (not for categories)
+      if (type !== 'category') {
+        dropdownContent.appendChild(createAddQueryOption(query));
+      }
     } else {
-      // Has results - show "Add '[query]' as new [section name]" → results
-      dropdownContent.appendChild(createAddQueryOption(query));
+      // Has results - show "Add '[query]' as new [section name]" → results (not for categories)
+      if (type !== 'category') {
+        dropdownContent.appendChild(createAddQueryOption(query));
+      }
       
       // Show matching results
       results.slice(0, 10).forEach(option => {
