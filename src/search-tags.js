@@ -92,7 +92,7 @@ function initSearchTags(type, options) {
       // For provider, if there's a selected value, clear it to show search
       if (type === 'provider' && searchInput.dataset.selectedProvider) {
         searchInput.value = '';
-        updateProviderIcon(false);
+        // Don't change icon - keep it as user icon
       }
       const query = searchInput.value.trim().toLowerCase();
       const currentProvider = type === 'provider' ? searchInput.dataset.selectedProvider : null;
@@ -110,7 +110,7 @@ function initSearchTags(type, options) {
       // For provider, if there's a selected value, clear it to show search
       if (type === 'provider' && searchInput.dataset.selectedProvider) {
         searchInput.value = '';
-        updateProviderIcon(false);
+        // Don't change icon - keep it as user icon
       }
       const query = searchInput.value.trim().toLowerCase();
       const currentProvider = type === 'provider' ? searchInput.dataset.selectedProvider : null;
@@ -133,10 +133,10 @@ function initSearchTags(type, options) {
       const query = e.target.value.trim().toLowerCase();
       const currentProvider = type === 'provider' ? searchInput.dataset.selectedProvider : null;
       performSearch(type, query, options, selectedTags, dropdown, currentProvider);
-      // Clear selected provider when user starts typing
+      // Clear selected provider when user starts typing (but keep user icon)
       if (type === 'provider') {
         searchInput.dataset.selectedProvider = '';
-        updateProviderIcon(false);
+        // Don't change icon - keep it as user icon
       }
     }
   });
@@ -151,8 +151,8 @@ function initSearchTags(type, options) {
       if (type === 'provider' && searchInput.dataset.selectedProvider && !searchInput.value.trim()) {
         searchInput.value = searchInput.dataset.selectedProvider;
         updateProviderIcon(true);
-      } else {
-        // Switch back to add mode if empty
+      } else if (type !== 'provider') {
+        // Switch back to add mode if empty (not for provider)
         switchToAddMode(type);
       }
     }
@@ -222,7 +222,7 @@ function updateProviderIcon(hasProvider) {
   if (!icon) return;
   
   if (hasProvider) {
-    // Show source/book icon
+    // Show source/book icon when provider is selected
     icon.innerHTML = `
       <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"></path>
       <path d="M8 11h8"></path>
@@ -231,13 +231,13 @@ function updateProviderIcon(hasProvider) {
     icon.classList.remove('provider-icon-search', 'provider-icon-add');
     icon.classList.add('provider-icon-source');
   } else {
-    // Show search icon (when in search mode)
+    // Show user icon (default, never show search icon)
     icon.innerHTML = `
-      <circle cx="11" cy="11" r="8"></circle>
-      <path d="m21 21-4.3-4.3"></path>
+      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+      <circle cx="12" cy="7" r="4"></circle>
     `;
-    icon.classList.remove('provider-icon-source', 'provider-icon-add');
-    icon.classList.add('provider-icon-search');
+    icon.classList.remove('provider-icon-search', 'provider-icon-source');
+    icon.classList.add('provider-icon-add');
   }
 }
 
@@ -251,7 +251,7 @@ function switchToSearchMode(type) {
   const placeholders = {
     'category': 'Search Categories ...',
     'tag': 'Search tags or type to add a new tag',
-    'provider': 'Search provider or type to add a new provider'
+    'provider': 'Search providers or type to add a new provider'
   };
   searchInput.placeholder = placeholders[type];
 }
