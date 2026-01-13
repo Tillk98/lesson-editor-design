@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson Editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+  <div class="flex flex-col items-start md:flex-row gap-1">
+    <div class="flex flex-col gap-2 md:max-h-[calc(100dvh-var(--header-height)-53px)] w-full md:w-auto p-4 md:overflow-y-auto">
+      <div data-slot="card" class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm w-full md:w-64 !p-0">
+        <div data-slot="card-content" class="px-6 w-full !p-0">
+          <div data-slot="form-item" class="grid gap-2 w-full">
+            <div class="group/tile flex flex-col items-start rounded-lg w-full" data-slot="form-control" id=":r42:-form-item" aria-describedby=":r42:-form-item-description" aria-invalid="false">
+              <div class="relative rounded-t-lg w-full h-40" data-field="imageInput" style="background-color: rgb(182, 186, 187);">
+                <span data-slot="avatar" class="relative flex shrink-0 overflow-hidden rounded-t-lg size-full">
+                  <img data-slot="avatar-image" class="aspect-square object-contain object-center size-full" alt="La France se dote de nouvelles méthodes" src="/static/images/default-content.webp" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23b6babb%22 width=%22160%22 height=%22160%22/%3E%3C/svg%3E'">
+                </span>
+                <button data-slot="dialog-trigger" class="inline-flex items-center cursor-pointer justify-center gap-2 whitespace-nowrap text-sm font-medium transition-color disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none data-focus:border-ring focus-visible:border-ring focus:border-ring data-focus:ring-[3px] focus-visible:ring-[3px] focus:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive rounded-full bg-secondary text-secondary-foreground data-hover:bg-secondary-dark hover:bg-secondary-dark data-focus:ring-secondary/50 focus-visible:ring-secondary/50 data-focus:bg-secondary-dark focus:ring-secondary/20 focus:bg-secondary-dark size-9 absolute top-4 right-4" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r43:" data-state="closed">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-image-plus size-5" aria-hidden="true">
+                    <path d="M16 5h6"></path>
+                    <path d="M19 2v6"></path>
+                    <path d="M21 11.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7.5"></path>
+                    <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>
+                    <circle cx="9" cy="9" r="2"></circle>
+                  </svg>
+                </button>
+                <div class="flex flex-col gap-1 p-2 absolute bottom-0 left-0">
+                  <div class="flex items-baseline gap-1">
+                    <span class="border w-4 h-2 rounded-full border-neutral-50 bg-blue-500"></span>
+                    <span class="text-neutral-50 text-xs">
+                      <span class="block group-[.is-hover]/tile:hidden !m-0">89</span>
+                      <span class="hidden group-[.is-hover]/tile:block !m-0">89 New Words</span>
+                    </span>
+                  </div>
+                  <div class="flex items-baseline gap-1">
+                    <span class="border w-4 h-2 rounded-full border-neutral-50 bg-amber-500"></span>
+                    <span class="text-neutral-50 text-xs">
+                      <span class="block group-[.is-hover]/tile:hidden !m-0">11</span>
+                      <span class="hidden group-[.is-hover]/tile:block !m-0">11 LingQs</span>
+                    </span>
+                  </div>
+                  <div class="items-baseline gap-1 hidden group-[.is-hover]/tile:flex">
+                    <span class="border w-4 h-2 rounded-full border-neutral-50 bg-neutral-200"></span>
+                    <span class="text-neutral-50 text-xs">
+                      <span class="block group-[.is-hover]/tile:hidden !m-0">103</span>
+                      <span class="hidden group-[.is-hover]/tile:block !m-0">103 Known Words</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center w-full h-2">
+                <progress value="0" max="100" class="w-full h-full appearance-none [&::-webkit-progress-bar]:bg-gray-200 [&::-webkit-progress-value]:bg-green-500 [&::-moz-progress-bar]:bg-green-500"></progress>
+              </div>
+              <div class="flex flex-col gap-1 justify-between rounded-b-lg px-2 py-2 w-full h-24">
+                <span class="text-sm font-semibold line-clamp-1 text-ellipsis break-words">La France se dote de nouvelles méthodes</span>
+                <div class="flex flex-col gap-1">
+                  <div class="flex items-baseline gap-1">
+                    <span class="w-2 h-2 rounded-full border border-blue-500 bg-blue-500"></span>
+                    <span class="text-xs">45% new words</span>
+                  </div>
+                </div>
+                <div class="grid grid-cols-[1fr_auto] gap-1">
+                  <div>
+                    <span class="text-xs text-gray-500 line-clamp-1 text-ellipsis break-words">Quick Imports</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-slot="card" class="bg-card text-card-foreground flex flex-col rounded-xl border shadow-sm w-full md:w-64 py-4 gap-1 overflow-hidden min-h-80">
+        <div data-slot="card-header" class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 w-full px-4 overflow-hidden border-b-1">
+          <div data-slot="form-item" class="grid gap-2 w-full overflow-hidden">
+            <label data-slot="form-label" class="flex items-center gap-2 select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive text-base font-semibold" data-error="false" for=":r46:-form-item">Course</label>
+            <div class="grid grid-cols-[1fr_auto] gap-2 items-center" data-slot="form-control" id=":r46:-form-item" aria-describedby=":r46:-form-item-description" aria-invalid="false">
+              <div class="relative">
+                <button data-slot="dropdown-menu-trigger" class="dropdown-trigger inline-flex cursor-pointer gap-2 whitespace-nowrap text-sm font-medium transition-color disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none data-focus:border-ring focus-visible:border-ring focus:border-ring data-focus:ring-ring/50 focus-visible:ring-ring/50 focus:ring-ring/50 data-focus:ring-[3px] focus-visible:ring-[3px] focus:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive rounded-full border-transparent border bg-transparent text-foreground data-hover:border-border hover:border-border px-6 py-2 has-[>svg]:pl-4 w-full h-auto !rounded-sm !border-none !ring-0 focus:!ring-0 overflow-hidden !p-0 items-center justify-start" name="collection" type="button" id="radix-:r47:" aria-haspopup="menu" aria-expanded="false" data-state="closed" aria-controls="radix-:r47:-content">
+                  <span class="truncate font-normal text-md">Quick Imports</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down chevron-icon transition-transform duration-200" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6"></path>
+                  </svg>
+                </button>
+                <div id="radix-:r47:-content" data-slot="dropdown-menu-content" class="dropdown-content absolute z-50 mt-1 w-full rounded-md border bg-white shadow-lg hidden">
+                  <div class="p-1">
+                    <div class="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground" data-value="quick-imports">Quick Imports</div>
+                    <div class="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground" data-value="my-lessons">My Lessons</div>
+                    <div class="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground" data-value="favorites">Favorites</div>
+                  </div>
+                </div>
+              </div>
+              <button data-slot="button" class="inline-flex items-center cursor-pointer justify-center gap-2 whitespace-nowrap text-sm font-medium transition-color disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none data-focus:border-ring focus-visible:border-ring focus:border-ring data-focus:ring-ring/50 focus-visible:ring-ring/50 focus:ring-ring/50 data-focus:ring-[3px] focus-visible:ring-[3px] focus:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive rounded-full hover:bg-ghost hover:text-ghost-foreground data-hover:bg-ghost data-hover:text-ghost-foreground dark:hover:bg-ghost/50 size-7">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen" aria-hidden="true">
+                  <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                  <path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div data-slot="card-content" class="px-6 !px-0 pt-2 gap-2 w-full overflow-hidden">
+          <p class="px-4 uppercase font-semibold text-sm">Lessons</p>
+          <div dir="ltr" data-slot="scroll-area" class="relative h-40 w-full max-w-full" style="position: relative; --radix-scroll-area-corner-width: 0px; --radix-scroll-area-corner-height: 0px;">
+            <style>
+              [data-radix-scroll-area-viewport]{
+                scrollbar-width:none;
+                -ms-overflow-style:none;
+                -webkit-overflow-scrolling:touch;
+              }
+              [data-radix-scroll-area-viewport]::-webkit-scrollbar{
+                display:none
+              }
+            </style>
+            <div data-radix-scroll-area-viewport="" data-slot="scroll-area-viewport" class="focus-visible:ring-ring/50 size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1" style="overflow: hidden scroll;">
+              <div style="min-width: 100%; display: table;">
+                <div class="flex flex-col gap-1 px-2 w-full sm:w-64 overflow-x-hidden">
+                  <a class="group/item flex items-center border border-transparent text-sm rounded-md transition-colors [a]:hover:bg-accent/50 [a]:transition-colors duration-100 flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] bg-transparent py-3 gap-2.5 px-2 w-full overflow-x-hidden w-full overflow-x-hidden" data-slot="item" data-variant="default" data-size="sm" href="/en/learn/fr/web/editor/89873/" data-discover="true">
+                    <div data-slot="item-content" class="flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none w-full overflow-x-hidden">
+                      <span class="!w-full truncate font-normal">02/09/2012 - Pakistan : un imam écroué pour complot présumé contre la jeune chrétienne Rimsha</span>
+                    </div>
+                  </a>
+                  <a class="group/item flex items-center border border-transparent text-sm rounded-md transition-colors [a]:hover:bg-accent/50 [a]:transition-colors duration-100 flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] bg-transparent py-3 gap-2.5 px-2 w-full overflow-x-hidden w-full overflow-x-hidden" data-slot="item" data-variant="default" data-size="sm" href="/en/learn/fr/web/editor/361569/" data-discover="true">
+                    <div data-slot="item-content" class="flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none w-full overflow-x-hidden">
+                      <span class="!w-full truncate font-normal">Deux militaires de la Garde nationale</span>
+                    </div>
+                  </a>
+                  <a class="group/item flex items-center border border-transparent text-sm rounded-md transition-colors [a]:hover:bg-accent/50 [a]:transition-colors duration-100 flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] bg-transparent py-3 gap-2.5 px-2 w-full overflow-x-hidden w-full overflow-x-hidden" data-slot="item" data-variant="default" data-size="sm" href="/en/learn/fr/web/editor/361597/" data-discover="true">
+                    <div data-slot="item-content" class="flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none w-full overflow-x-hidden">
+                      <span class="!w-full truncate font-normal">La France se dote de nouvelles méthodes</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div data-slot="card-footer" class="flex items-center [.border-t]:pt-6 border-t-1 w-full px-2 pt-2">
+          <a href="/en/learn/fr/web/editor/?course=50379" data-slot="button" class="inline-flex items-center cursor-pointer justify-center gap-2 whitespace-nowrap text-sm font-medium transition-color disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none data-focus:border-ring focus-visible:border-ring focus:border-ring data-focus:ring-ring/50 focus-visible:ring-ring/50 focus:ring-ring/50 data-focus:ring-[3px] focus-visible:ring-[3px] focus:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive rounded-full hover:bg-ghost hover:text-ghost-foreground data-hover:bg-ghost data-hover:text-ghost-foreground dark:hover:bg-ghost/50 h-9 px-6 py-2 has-[>svg]:pl-4 w-full !rounded-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus" aria-hidden="true">
+              <path d="M5 12h14"></path>
+              <path d="M12 5v14"></path>
+            </svg>
+            Add a New Lesson
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="flex-1 flex flex-col gap-6  w-full md:max-h-[calc(100dvh-var(--header-height)-53px)] pl-4 md:pl-1 2xl:pr-100 py-4 pr-4 md:overflow-y-auto">
+      <div data-slot="form-item" class="grid gap-2">
+        <label data-slot="form-label" class="flex items-center gap-2 select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive text-base font-semibold" data-error="false" for=":r49:-form-item">Title</label>
+        <input data-slot="form-control" class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground border-input flex w-full min-w-0 rounded-md border bg-white px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-10" maxlength="60" placeholder="Add title 60 characters max." name="title" id=":r49:-form-item" aria-describedby=":r49:-form-item-description" aria-invalid="false" value="La France se dote de nouvelles méthodes">
+      </div>
+      <div data-slot="form-item" class="grid gap-2">
+        <label data-slot="form-label" class="flex items-center gap-2 select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive text-base font-semibold" data-error="false" for=":r4a:-form-item">Description</label>
+        <textarea class="flex min-h-[80px] w-full rounded-md border border-input bg-white px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 resize-none" maxlength="200" placeholder="Add description 200 characters max (Optional)." name="description" data-slot="form-control" id=":r4a:-form-item" aria-describedby=":r4a:-form-item-description" aria-invalid="false" style="height: 78px !important;">Selon un document non public consulté par « Le Monde », la gendarmerie maritime pourra intercepter en mer des canots pneumatiques avant même qu'ils embarquent des migrants.</textarea>
+      </div>
+      <div data-slot="form-item" class="grid gap-2">
+        <label data-slot="form-label" class="flex items-center gap-2 select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive text-base font-semibold" data-error="false" for=":r4b:-form-item">Original Url</label>
+        <input data-slot="form-control" class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground border-input flex w-full min-w-0 rounded-md border bg-white px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-10" maxlength="500" placeholder="Add original url 500 characters max." name="originalUrl" id=":r4b:-form-item" aria-describedby=":r4b:-form-item-description" aria-invalid="false" value="">
+      </div>
+      <div class="flex flex-col gap-1">
+        <div data-slot="form-item" class="grid gap-2">
+          <label data-slot="form-label" class="flex items-center gap-2 select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive text-base font-semibold" data-error="false" for=":r4c:-form-item">Add Files</label>
+        </div>
+        <div class="flex items-center gap-2">
+          <div data-slot="form-item" class="grid gap-2">
+            <div class="bg-clickable-area border rounded-xl h-40 w-52 border-dashed" data-field="audioInput">
+              <div class="w-full h-full relative flex flex-col items-center justify-center rounded-xl">
+                <div class="w-full h-full flex flex-col items-center justify-center text-gray-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-headphones" aria-hidden="true">
+                    <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path>
+                  </svg>
+                  <span class="text-sm">Audio</span>
+                </div>
+                <div class="w-full h-full absolute left-0 top-0 bg-clickable-area/30 flex-col items-center justify-center rounded-xl hidden">
+                  <button data-slot="dialog-trigger" class="inline-flex items-center cursor-pointer justify-center whitespace-nowrap text-sm font-medium transition-color disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none data-focus:border-ring focus-visible:border-ring focus:border-ring data-focus:ring-[3px] focus-visible:ring-[3px] focus:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive rounded-full bg-secondary text-secondary-foreground data-hover:bg-secondary-dark hover:bg-secondary-dark data-focus:ring-secondary/50 focus-visible:ring-secondary/50 data-focus:bg-secondary-dark focus:ring-secondary/20 focus:bg-secondary-dark h-8 gap-1.5 px-5 has-[>svg]:pl-3" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r4e:" data-state="closed">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus" aria-hidden="true">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5v14"></path>
+                    </svg>
+                    Add Audio
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-slot="form-item" class="grid gap-2">
+            <div class="bg-clickable-area border rounded-xl h-40 w-52 border-dashed" data-field="video">
+              <div class="w-full h-full relative flex flex-col items-center justify-center rounded-xl">
+                <div class="w-full h-full flex flex-col items-center justify-center text-gray-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-video" aria-hidden="true">
+                    <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"></path>
+                    <rect x="2" y="6" width="14" height="12" rx="2"></rect>
+                  </svg>
+                  <span class="text-sm">Video</span>
+                </div>
+                <div class="w-full h-full absolute left-0 top-0 bg-clickable-area/30 flex-col items-center justify-center rounded-xl hidden">
+                  <button data-slot="dialog-trigger" class="inline-flex items-center cursor-pointer justify-center whitespace-nowrap text-sm font-medium transition-color disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none data-focus:border-ring focus-visible:border-ring focus:border-ring data-focus:ring-[3px] focus-visible:ring-[3px] focus:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive rounded-full bg-secondary text-secondary-foreground data-hover:bg-secondary-dark hover:bg-secondary-dark data-focus:ring-secondary/50 focus-visible:ring-secondary/50 data-focus:bg-secondary-dark focus:ring-secondary/20 focus:bg-secondary-dark h-8 gap-1.5 px-5 has-[>svg]:pl-3" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r4i:" data-state="closed">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus" aria-hidden="true">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5v14"></path>
+                    </svg>
+                    Add Video
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-slot="form-item" class="grid gap-2">
+        <label data-slot="form-label" class="flex items-center gap-2 select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive text-base font-semibold" data-error="false" for=":r4l:-form-item">Lesson Sharing</label>
+        <div class="relative">
+          <button type="button" role="combobox" aria-controls="radix-:r4m:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" data-slot="select-trigger" data-size="default" class="dropdown-trigger border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive flex items-center justify-between gap-2 rounded-md border px-3 py-2 text-sm whitespace-nowrap shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 data-[size=default]:h-9 data-[size=sm]:h-8 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 w-full bg-white">
+            <span data-slot="select-value" class="flex items-center gap-2" style="pointer-events: none;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock-keyhole-open text-foreground" aria-hidden="true">
+                <circle cx="12" cy="16" r="1"></circle>
+                <rect width="18" height="12" x="3" y="10" rx="2"></rect>
+                <path d="M7 10V7a5 5 0 0 1 9.33-2.5"></path>
+              </svg>
+              Shared
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down chevron-icon size-4 opacity-50 transition-transform duration-200" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+          <div id="radix-:r4m:" data-slot="select-content" class="dropdown-content absolute z-50 mt-1 w-full rounded-md border bg-white shadow-lg hidden">
+            <div class="p-1">
+              <div class="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50" data-value="shared">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4 text-foreground">
+                  <circle cx="12" cy="16" r="1"></circle>
+                  <rect width="18" height="12" x="3" y="10" rx="2"></rect>
+                  <path d="M7 10V7a5 5 0 0 1 9.33-2.5"></path>
+                </svg>
+                Shared
+              </div>
+              <div class="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50" data-value="private">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4 text-foreground">
+                  <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                Private
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-slot="form-item" class="grid gap-2">
+        <label data-slot="form-label" class="flex items-center gap-2 select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive text-base font-semibold" data-error="false" for=":r7a:-form-item">Language</label>
+        <div class="relative">
+          <button type="button" role="combobox" aria-controls="radix-:r7b:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" disabled="" data-disabled="" data-slot="select-trigger" data-size="default" class="dropdown-trigger border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive flex items-center justify-between gap-2 rounded-md border px-3 py-2 text-sm whitespace-nowrap shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 data-[size=default]:h-9 data-[size=sm]:h-8 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 w-full bg-white">
+            <span data-slot="select-value" class="flex items-center gap-2" style="pointer-events: none;">
+              <svg width="20" height="20" class="svg-flag svg-flag--fr" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path class="" fill="#CF3535" d="M54,2.5v75C74.7,69.7,85.2,46.7,77.5,26C73.4,15.1,64.9,6.6,54,2.5z"></path>
+                <path class="st1" fill="#01297B" d="M26,77.5v-75C5.3,10.3-5.2,33.3,2.5,54C6.6,64.9,15.1,73.4,26,77.5z"></path>
+                <path class="st2" fill="#FFFFFF" d="M40,0c-4.8,0-9.5,0.9-14,2.5v75c9,3.4,19,3.4,28,0v-75C49.5,0.9,44.8,0,40,0z"></path>
+                <circle cx="40" cy="40" r="40" stroke="#777" stroke-width="1" fill="none"></circle>
+              </svg>
+              French
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down chevron-icon size-4 opacity-50 transition-transform duration-200" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+          <div id="radix-:r7b:" data-slot="select-content" class="dropdown-content absolute z-50 mt-1 w-full rounded-md border bg-white shadow-lg hidden"></div>
+        </div>
+      </div>
+      <div data-slot="form-item" class="grid gap-2">
+        <label data-slot="form-label" class="flex items-center gap-2 select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive text-base font-semibold" data-error="false" for=":r7c:-form-item">Accent</label>
+        <div class="relative">
+          <button type="button" role="combobox" aria-controls="radix-:r7d:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" data-placeholder="" data-slot="select-trigger" data-size="default" class="dropdown-trigger border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive flex items-center justify-between gap-2 rounded-md border px-3 py-2 text-sm whitespace-nowrap shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 data-[size=default]:h-9 data-[size=sm]:h-8 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 w-full bg-white">
+            <span data-slot="select-value" style="pointer-events: none;">Choose an accent</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down chevron-icon size-4 opacity-50 transition-transform duration-200" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+          <div id="radix-:r7d:" data-slot="select-content" class="dropdown-content absolute z-50 mt-1 w-full rounded-md border bg-white shadow-lg hidden">
+            <div class="p-1">
+              <div class="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground" data-value="france">France</div>
+              <div class="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground" data-value="canada">Canada</div>
+              <div class="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground" data-value="belgium">Belgium</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-slot="form-item" class="grid gap-2">
+        <label data-slot="form-label" class="flex items-center gap-2 select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive text-base font-semibold" data-error="false" for=":r7e:-form-item">Level</label>
+        <div class="relative">
+          <button type="button" role="combobox" aria-controls="radix-:r7f:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" data-placeholder="" data-slot="select-trigger" data-size="default" class="dropdown-trigger border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive flex items-center justify-between gap-2 rounded-md border px-3 py-2 text-sm whitespace-nowrap shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 data-[size=default]:h-9 data-[size=sm]:h-8 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 w-full bg-white">
+            <span data-slot="select-value" style="pointer-events: none;">Select a level</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down chevron-icon size-4 opacity-50 transition-transform duration-200" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+          <div id="radix-:r7f:" data-slot="select-content" class="dropdown-content absolute z-50 mt-1 w-full rounded-md border bg-white shadow-lg hidden">
+            <div class="p-1">
+              <div class="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground" data-value="beginner">Beginner</div>
+              <div class="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground" data-value="intermediate">Intermediate</div>
+              <div class="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground" data-value="advanced">Advanced</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Divider -->
+      <div class="border-t border-border my-4"></div>
+      <div data-slot="form-item" class="grid gap-2">
+        <label data-slot="form-label" class="flex items-center gap-2 select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive text-base font-semibold" data-error="false" for=":r7g:-form-item">Categories</label>
+        <div class="flex flex-col gap-2" data-field="shelves">
+          <div class="relative">
+            <div class="relative flex items-center">
+              <svg id="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-3 h-4 w-4 text-muted-foreground pointer-events-none category-icon-add">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"></path>
+                <path d="M8 11h8"></path>
+                <path d="M8 7h6"></path>
+              </svg>
+              <input type="text" id="category-search" class="search-input w-full rounded-md border border-input bg-white px-3 py-1 pl-9 pr-3 text-base shadow-xs placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm h-10" placeholder="Add Categories" autocomplete="off">
+            </div>
+            <div id="category-dropdown" class="search-dropdown absolute z-50 mt-1 w-full rounded-md border bg-white shadow-lg hidden max-h-60 overflow-auto">
+              <div class="p-1"></div>
+            </div>
+          </div>
+          <div id="category-tags" class="flex flex-wrap items-center gap-2">
+            <!-- Tags will be dynamically added here -->
+          </div>
+        </div>
+      </div>
+      <div data-slot="form-item" class="grid gap-2">
+        <label data-slot="form-label" class="flex items-center gap-2 select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive text-base font-semibold" data-error="false" for=":r7i:-form-item">Tags</label>
+        <div class="flex flex-col gap-2" data-field="tags">
+          <div class="relative">
+            <div class="relative flex items-center">
+              <svg id="tag-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-3 h-4 w-4 text-muted-foreground pointer-events-none tag-icon-add">
+                <path d="M12 2H2v10l9.29 9.29a1 1 0 0 0 1.41 0l8.3-8.3a1 1 0 0 0 0-1.41L12 2Z"></path>
+                <path d="M7 7h.01"></path>
+              </svg>
+              <input type="text" id="tag-search" class="search-input w-full rounded-md border border-input bg-white px-3 py-1 pl-9 pr-3 text-base shadow-xs placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm h-10" placeholder="Add Tags" autocomplete="off">
+            </div>
+            <div id="tag-dropdown" class="search-dropdown absolute z-50 mt-1 w-full rounded-md border bg-white shadow-lg hidden max-h-60 overflow-auto">
+              <div class="p-1"></div>
+            </div>
+          </div>
+          <div id="tag-tags" class="flex flex-wrap items-center gap-2">
+            <!-- Tags will be dynamically added here -->
+          </div>
+        </div>
+      </div>
+      <div data-slot="form-item" class="grid gap-2">
+        <label data-slot="form-label" class="flex items-center gap-2 select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive text-base font-semibold" data-error="false" for=":r7k:-form-item">Provider</label>
+        <div class="relative" data-field="provider">
+          <div class="relative flex items-center">
+            <svg id="provider-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-3 h-4 w-4 text-muted-foreground pointer-events-none provider-icon-add">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <input type="text" id="provider-search" class="search-input w-full rounded-md border border-input bg-white px-3 py-1 pl-9 pr-3 text-base shadow-xs placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm h-10" placeholder="Add Provider" autocomplete="off">
+          </div>
+          <div id="provider-dropdown" class="search-dropdown absolute z-50 mt-1 w-full rounded-md border bg-white shadow-lg hidden max-h-60 overflow-auto">
+            <div class="p-1"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Divider -->
+      <div class="border-t border-border my-4"></div>
+      <!-- Grouped Toggle Options -->
+      <div class="flex flex-col gap-6">
+        <!-- Access Control Category -->
+        <div class="flex flex-col gap-3">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-muted-foreground">
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <h3 class="text-sm font-semibold">Access Control</h3>
+          </div>
+          <div class="flex flex-col gap-3 pl-6">
+            <div data-slot="form-item" class="grid gap-2">
+              <div class="flex items-center gap-2" data-field="isProtected">
+                <button type="button" role="switch" aria-checked="false" data-state="unchecked" value="on" data-slot="form-control" class="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent shadow-xs transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50" id=":r7m:-form-item" aria-describedby=":r7m:-form-item-description" aria-invalid="false">
+                  <span data-state="unchecked" data-slot="switch-thumb" class="bg-background dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"></span>
+                </button>
+                <label data-slot="form-label" class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive" data-error="false" for=":r7m:-form-item">Owner/manager only editing</label>
+              </div>
+            </div>
+            <div data-slot="form-item" class="grid gap-2">
+              <div class="flex items-center gap-2" data-field="isHidden">
+                <button type="button" role="switch" aria-checked="true" data-state="checked" value="on" data-slot="form-control" class="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent shadow-xs transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50" id=":r7n:-form-item" aria-describedby=":r7n:-form-item-description" aria-invalid="false">
+                  <span data-state="checked" data-slot="switch-thumb" class="bg-background dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"></span>
+                </button>
+                <label data-slot="form-label" class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive" data-error="false" for=":r7n:-form-item">Hide preview before login</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promotion Category -->
+        <div class="flex flex-col gap-3">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-muted-foreground">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            <h3 class="text-sm font-semibold">Promotion</h3>
+          </div>
+          <div class="flex flex-col gap-3 pl-6">
+            <div data-slot="form-item" class="grid gap-2">
+              <div class="flex items-center gap-2" data-field="isFeatured">
+                <button type="button" role="switch" aria-checked="false" data-state="unchecked" value="on" data-slot="form-control" class="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent shadow-xs transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50" id=":r7o:-form-item" aria-describedby=":r7o:-form-item-description" aria-invalid="false">
+                  <span data-state="unchecked" data-slot="switch-thumb" class="bg-background dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"></span>
+                </button>
+                <label data-slot="form-label" class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive" data-error="false" for=":r7o:-form-item">Show in recommended</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enable Pricing Category -->
+        <div class="flex flex-col gap-3">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-muted-foreground">
+              <line x1="12" x2="12" y1="2" y2="22"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+            <h3 class="text-sm font-semibold">Pricing</h3>
+          </div>
+          <div class="flex flex-col gap-3 pl-6">
+            <div data-slot="form-item" class="grid gap-2">
+              <div class="flex items-center gap-2" data-field="hasPrice">
+                <button type="button" role="switch" aria-checked="false" data-state="unchecked" value="on" data-slot="form-control" id="paywall-toggle" class="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent shadow-xs transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50" aria-describedby=":r7q:-form-item-description" aria-invalid="false">
+                  <span data-state="unchecked" data-slot="switch-thumb" class="bg-background dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"></span>
+                </button>
+                <label data-slot="form-label" class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive" data-error="false" for="paywall-toggle">Enable paywall</label>
+              </div>
+            </div>
+            <div id="price-input-container" class="hidden pl-10">
+              <input type="text" id="price-input" data-slot="input" class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground border-input flex h-9 min-w-0 rounded-md border bg-white px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive w-fit" inputmode="decimal" name="price" placeholder="0" value="0.00">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

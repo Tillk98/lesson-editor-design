@@ -1,0 +1,268 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary-dark: 210 40% 94%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --ghost: 210 40% 96.1%;
+    --ghost-foreground: 222.2 47.4% 11.2%;
+    --default-darkest: 222.2 47.4% 11.2%;
+    --default-lighter: 214.3 31.8% 91.4%;
+    --clickable-area: 210 40% 98%;
+    --radius: 0.5rem;
+    --header-height: 64px;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gray-100 text-foreground;
+    font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .border-b-1 {
+    border-bottom-width: 1px;
+  }
+  
+  .border-t-1 {
+    border-top-width: 1px;
+  }
+
+  .2xl\:pr-100 {
+    @media (min-width: 1536px) {
+      padding-right: 25rem;
+    }
+  }
+}
+
+/* Dropdown styles */
+.dropdown-content,
+.search-dropdown {
+  animation: fadeIn 0.15s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Search input styles */
+.search-input:focus {
+  border-color: hsl(var(--ring));
+}
+
+/* Tag container - collapses when empty */
+#category-tags:empty,
+#tag-tags:empty {
+  display: none;
+}
+
+/* Tag container - shows with proper spacing when has content */
+#category-tags:not(:empty),
+#tag-tags:not(:empty) {
+  display: flex;
+  margin-top: 0.5rem; /* gap-2 equivalent */
+}
+
+/* Provider search dropdown styles */
+.provider-dropdown {
+  animation: fadeIn 0.15s ease-out;
+  background-color: oklch(1 0 0);
+  border: 1px solid oklch(0.9209 0.0035 247.86);
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: rgb(9, 26, 47);
+  display: block;
+  font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 24px;
+  margin: 0px;
+  padding: 0px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.provider-search-input:focus {
+  border-color: hsl(var(--ring));
+}
+
+/* Tag styles - matching provided CSS */
+.tag-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: oklab(1 0 0 / 0.5);
+  border: 1px solid oklch(0.145 0 0);
+  border-radius: 8px;
+  color: oklch(0.145 0 0);
+  column-gap: 4px;
+  flex-shrink: 0;
+  font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 12px;
+  font-weight: 500;
+  height: 26px;
+  line-height: 16px;
+  padding: 2px 8px;
+  transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.tag-text {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: oklch(0.145 0 0);
+}
+
+.tag-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: oklch(0.145 0 0);
+  transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tag-remove:hover {
+  opacity: 0.7;
+}
+
+.tag-remove-icon {
+  width: 12px;
+  height: 12px;
+  color: oklch(0.145 0 0);
+}
+
+/* Clear All button styles - grey to match placeholder text */
+.clear-all-button {
+  color: hsl(var(--muted-foreground));
+}
+
+.clear-all-button:hover {
+  color: hsl(var(--muted-foreground) / 0.8);
+}
+
+.clear-all-button svg {
+  color: hsl(var(--muted-foreground));
+}
+
+.clear-all-button:hover svg {
+  color: hsl(var(--muted-foreground) / 0.8);
+}
+
+/* Dropdown open state */
+.dropdown-trigger[data-state="open"] {
+  border-color: hsl(var(--ring));
+}
+
+.dropdown-trigger[data-state="open"] .chevron-icon {
+  transform: rotate(180deg);
+}
+
+/* Ensure dropdown content is positioned correctly */
+.relative {
+  position: relative;
+}
+
+/* Toggle switch styles - matching provided CSS */
+button[role="switch"] {
+  align-items: center;
+  appearance: button;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+  font-weight: 400;
+  height: 18.3984px;
+  line-height: 24px;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 32px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+button[role="switch"][data-state="checked"] {
+  background-color: oklch(0.6468 0.1342 151.99);
+}
+
+button[role="switch"][data-state="unchecked"] {
+  background-color: hsl(var(--input));
+}
+
+button[role="switch"]:focus-visible {
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 3px hsl(var(--ring) / 0.5);
+}
+
+button[role="switch"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Toggle thumb/handler styles */
+button[role="switch"] span[data-slot="switch-thumb"] {
+  pointer-events: none;
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+/* Handler is white when toggle is unchecked (inactive) */
+button[role="switch"][data-state="unchecked"] span[data-slot="switch-thumb"] {
+  transform: translateX(0);
+  background-color: white !important;
+}
+
+/* Handler is white when toggle is checked (active) - stays white on green background */
+button[role="switch"][data-state="checked"] span[data-slot="switch-thumb"] {
+  transform: translateX(calc(100% - 2px));
+  background-color: white !important;
+}
